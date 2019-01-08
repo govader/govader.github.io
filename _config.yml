@@ -16,6 +16,7 @@ disqus: govader
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
 baseurl: ''
 url: 'https://www.go-vader.io'
+logo: 'assets/images/logo.png'
 
 # Permalinks
 permalink: /:title

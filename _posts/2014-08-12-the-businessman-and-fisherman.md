@@ -1,12 +1,11 @@
 ---
 layout: post
-cover: 'assets/images/cover7.jpg'
+cover: 'cover7.jpg'
 navigation: True
 title: The Businessman & the fisherman
 date: 2014-08-12 10:18:00
 tags: fables fiction
 subclass: 'post tag-test tag-content'
-logo: 'assets/images/ghost.png'
 author: casper
 categories: casper
 ---
