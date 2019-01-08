@@ -13,8 +13,6 @@ description: "Write a bit about Golang and other stuff"
 short_url: 'https://www.go-vader.io'
 google_analytics: UA-131843975-1
 disqus: govader
-# edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: ''
 
 
 # Permalinks
