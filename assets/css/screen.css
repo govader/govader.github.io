@@ -104,20 +104,21 @@ td, th{ padding: 0; }
    ========================================================================== */
 
 /* Import the font file with the icons in it */
+
 @font-face {
-    font-family: "casper-icons";
-    src:url("../fonts/casper-icons.eot?v=1");
-    src:url("../fonts/casper-icons.eot?v=1#iefix") format("embedded-opentype"),
-        url("../fonts/casper-icons.woff?v=1") format("woff"),
-        url("../fonts/casper-icons.ttf?v=1") format("truetype"),
-        url("../fonts/casper-icons.svg?v=1#icons") format("svg");
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?nrw9if');
+    src:  url('../fonts/icomoon.eot?nrw9if#iefix') format('embedded-opentype'),
+          url('../fonts/icomoon.ttf?nrw9if') format('truetype'),
+          url('../fonts/icomoon.woff?nrw9if') format('woff'),
+          url('../fonts/icomoon.svg?nrw9if#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
-}
-
+  }
+  
 /* Apply these base styles to all icons */
 [class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: "casper-icons", "Open Sans", sans-serif;
+    font-family: "icomoon", "Open Sans", sans-serif;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -131,8 +132,8 @@ td, th{ padding: 0; }
 
 /* Each icon is created by inserting the correct character into the
    content of the :before pseudo element. Like a boss. */
-.icon-ghost:before {
-    content: "\f600";
+.icon-github:before {
+    content: "\e900";
 }
 .icon-feed:before {
     content: "\f601";
