@@ -1,6 +1,6 @@
 ---
 layout: post
-cover: 'cover1.jpg'
+cover: 'cover1'
 navigation: True
 title: Down The Rabbit Hole
 date: 1865-11-26 10:18:00

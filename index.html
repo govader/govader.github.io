@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Go-Vader blog
-cover: 'go-vader.jpg'
+cover: 'go-vader'
 class: 'home-template'
 current: home
 ---
@@ -9,8 +9,7 @@ current: home
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
 <!-- The big featured header  -->
-<header class="main-header {% if page.cover %}"
-        style="background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.cover }}) {% else %}no-cover{% endif %}">
+<header class="main-header">
     <div class="vertical">
         <div class="main-header-content inner">
             <h1 class="page-title">{{ site.name }}</h1>
