@@ -36,9 +36,9 @@
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 <link rel="stylesheet" type="text/css" href="/{{ site.baseurl }}assets/css/syntax.min.css" />
 
-{% if page.cover %}
 <!-- responsive cover -->
 <style>
+    {% if page.cover %}
     header.main-header {
         background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.cover }}-300.jpg)
     }
@@ -57,14 +57,42 @@
             background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.cover }}.jpg)
         }
     }
+    {% else%}
+    header.main-header {
+        display:none;
+    }
+    {% endif %}
+
+    {% if page.next.cover %}
+        a.read-next-story {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.next.cover }}-300.jpg) 
+        }
+    {% endif %}
+    {% if page.previous.cover %}
+        a.read-next-story.prev {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.previous.cover }}-300.jpg)
+        }        
+    {% endif %}
+
+    {% if page.previous.cover and page.next.cover %}
+    @media (min-width: 600px) {
+        a.read-next-story {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.next.cover }}-600.jpg) 
+        }
+        a.read-next-story.prev {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.previous.cover }}-600.jpg)
+        }        
+    }
+    @media (min-width: 1200px) {
+        a.read-next-story {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.next.cover }}.jpg) 
+        }
+        a.read-next-story.prev {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.previous.cover }}.jpg)
+        }        
+      }
+    {% endif %}
 </style>
-{% else%}
-<style>
-header.main-header {
-    display:none;
-}
-</style>
-{% endif %}
 
 <!-- highlight.js -->
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
