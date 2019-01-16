@@ -1,31 +1,130 @@
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-    <meta name="referrer" content="origin" />
-    <link rel="next" href="/{{ site.baseurl }}page2/" />
 
-    <meta property="og:site_name" content="{{ site.name }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}" />
-    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-    <meta property="og:image" content="/{{ site.baseurl }}{% if page.cover %}assets/images/cover/{{ page.cover }}{% else %}assets/images/go-vader.jpg{% endif %}" />
+<!-- Document Settings -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}" />
-    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
-    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-    <meta name="twitter:image:src" content="/{{ site.baseurl }}{% if page.cover %}assets/images/cover/{{ page.cover }}{% else %}assets/images/go-vader.jpg{% endif %}" />
+<!-- Page Meta -->
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
 
-    <script type="application/ld+json">
+<!-- Mobile Meta -->
+<meta name="HandheldFriendly" content="True" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Brand icon -->
+<link rel="apple-touch-icon" sizes="57x57" href="/{{ site.baseurl }}assets/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/{{ site.baseurl }}assets/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/{{ site.baseurl }}assets/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/{{ site.baseurl }}assets/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/{{ site.baseurl }}assets/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/{{ site.baseurl }}assets/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/{{ site.baseurl }}assets/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/{{ site.baseurl }}assets/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/{{ site.baseurl }}assets/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/{{ site.baseurl }}assets/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/{{ site.baseurl }}assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/{{ site.baseurl }}assets/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/{{ site.baseurl }}assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/{{ site.baseurl }}assets/icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/{{ site.baseurl }}assets/icons/favicon.ico" >
+
+<!-- Styles'n'Scripts -->
+<link rel="stylesheet" type="text/css" href="/{{ site.baseurl }}assets/css/screen.css" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+<link rel="stylesheet" type="text/css" href="/{{ site.baseurl }}assets/css/syntax.min.css" />
+
+<!-- responsive cover -->
+<style>
+    {% if page.cover %}
+    header.main-header {
+        background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.cover }}-300.jpg)
+    }
+    @media (min-width: 300px) {
+        header.main-header {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.cover }}-600.jpg)
+        }
+    }
+    @media (min-width: 600px) {
+        header.main-header {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.cover }}-1200.jpg)
+        }
+    }
+    @media (min-width: 1200px) {
+        header.main-header {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.cover }}.jpg)
+        }
+    }
+    {% else%}
+    header.main-header {
+        display:none;
+    }
+    {% endif %}
+
+    {% if page.next.cover %}
+        a.read-next-story {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.next.cover }}-300.jpg) 
+        }
+    {% endif %}
+    {% if page.previous.cover %}
+        a.read-next-story.prev {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.previous.cover }}-300.jpg)
+        }        
+    {% endif %}
+
+    {% if page.previous.cover and page.next.cover %}
+    @media (min-width: 600px) {
+        a.read-next-story {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.next.cover }}-600.jpg) 
+        }
+        a.read-next-story.prev {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.previous.cover }}-600.jpg)
+        }        
+    }
+    @media (min-width: 1200px) {
+        a.read-next-story {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.next.cover }}.jpg) 
+        }
+        a.read-next-story.prev {
+            background-image: url(/{{ site.baseurl }}assets/images/cover/{{ page.previous.cover }}.jpg)
+        }        
+      }
+    {% endif %}
+</style>
+
+<!-- highlight.js -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+<style>.hljs { background: none; }</style>
+<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+<meta name="referrer" content="origin" />
+<link rel="next" href="/{{ site.baseurl }}page2/" />
+
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}" />
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="og:image" content="/{{ site.baseurl }}{% if page.cover %}assets/images/cover/{{ page.cover }}{% else %}assets/images/go-vader.jpg{% endif %}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}" />
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+<meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+<meta name="twitter:image:src" content="/{{ site.baseurl }}{% if page.cover %}assets/images/cover/{{ page.cover }}{% else %}assets/images/go-vader.jpg{% endif %}" />
+
+<script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "Website",
-    "publisher": "{{ site.name }}",
-    "name": "{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}",
-    "url": "{{ site.url }}{{ page.url }}",
-    "image": "/{{ site.baseurl }}{% if page.cover %}{{ page.cover }}{% else %}assets/images/cover1.jpg{% endif %}",
-    "description": "{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
+"@context": "https://schema.org",
+"@type": "Website",
+"publisher": "{{ site.name }}",
+"name": "{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}",
+"url": "{{ site.url }}{{ page.url }}",
+"image": "/{{ site.baseurl }}{% if page.cover %}{{ page.cover }}{% else %}assets/images/cover1.jpg{% endif %}",
+"description": "{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
 }
-    </script>
+</script>
 
-    <meta name="generator" content="Jekyll 3.0.0" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/{{ site.baseurl }}feed.xml" />
+<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/{{ site.baseurl }}feed.xml" />
+

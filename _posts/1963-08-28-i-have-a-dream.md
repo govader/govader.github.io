@@ -1,6 +1,6 @@
 ---
 layout: post
-cover: 'cover4.jpg'
+cover: 'cover4'
 navigation: True
 title: I Have a Dream
 date: 1963-08-28 10:18:00

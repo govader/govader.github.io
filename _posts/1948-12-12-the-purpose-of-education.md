@@ -1,6 +1,6 @@
 ---
 layout: post
-cover: 'cover5.jpg'
+cover: 'cover5'
 navigation: True
 title: The Purpose of Education
 date: 1948-12-12 10:18:00

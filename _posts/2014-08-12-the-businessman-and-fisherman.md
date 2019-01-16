@@ -1,6 +1,6 @@
 ---
 layout: post
-cover: 'cover7.jpg'
+cover: 'cover7'
 navigation: True
 title: The Businessman & the fisherman
 date: 2014-08-12 10:18:00

@@ -107,6 +107,7 @@ td, th{ padding: 0; }
 
 @font-face {
     font-family: 'icomoon';
+    font-display: optional;
     src:  url('../fonts/icomoon.eot?nrw9if');
     src:  url('../fonts/icomoon.eot?nrw9if#iefix') format('embedded-opentype'),
           url('../fonts/icomoon.ttf?nrw9if') format('truetype'),
